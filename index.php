@@ -7,5 +7,9 @@
 </head>
 <body>
     BELLA
+    <?php
+        echo "ciao";
+
+?>
 </body>
 </html>
