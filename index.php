@@ -6,6 +6,10 @@
     <title>Home</title>
 </head>
 <body>
-    ddd
+    <form>
+        <select name="classi" id="classi">
+            
+        </select>
+    </form>
 </body>
 </html>
