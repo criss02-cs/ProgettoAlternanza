@@ -2,8 +2,10 @@
 <html lang="it">
     <?php
         include_once "mysql_configuration/connection.php";
+        
         $conn = $GLOBALS['mysqli'];
-        $sql = "SELECT * FROM classi";
+        $sql = "SELECT * FROM classi WHERE AnnoScolastico LIKE '". date("Y") ."%' 
+                OR AnnoScolastico LIKE '%". date("Y", strtotime("+1 years")) ."%'";
         $result = $conn->query($sql);
     ?>
     <head>
