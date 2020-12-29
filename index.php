@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="it">
     <?php
+        //File per la connessione al database
         include_once "mysql_configuration/connection.php";
         
         $conn = $GLOBALS['mysqli'];
+        //Query per ottenere le classi dell'anno scolastico corrente
         $sql = "SELECT * FROM classi WHERE AnnoScolastico LIKE '". date("Y") ."%' 
                 OR AnnoScolastico LIKE '%". date("Y", strtotime("+1 years")) ."%'";
+        //Esecuzione della query
         $result = $conn->query($sql);
         $classe = "";
         if(!empty($_GET) && !empty($_GET['classi']))
@@ -21,6 +24,7 @@
             <select name="classi" id="classi">
                 <option value="empty" <?php if(empty($_GET['classi'])) echo 'selected';?>> </option>
                 <?php 
+                    //Ciclo per stampare dentro la select tutte le classi
                     while($row = mysqli_fetch_assoc($result)){
                         ?>
                         <option value="<?php echo $row['Anno'].' '.$row['Sezione'].' '.$row['AnnoScolastico']?>" 
@@ -31,6 +35,7 @@
                 ?>
             </select>
             <?php
+                //Controllo per aggiungere la scelta del periodo
                 if(!empty($_GET) && !empty($_GET['classi']) && $_GET['classi'] != "empty"){
                     include("periodo.php");
                 }
