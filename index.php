@@ -39,6 +39,14 @@
                 if(!empty($_GET) && !empty($_GET['classi']) && $_GET['classi'] != "empty"){
                     include("periodo.php");
                 }
+                //Controllo per aggiungere la lista degli studenti e la scelta delle relative aziende
+                if(!empty($_GET) && !empty($_GET['inizio']) && !empty($_GET['fine'])){
+                    include("lista.php"); ?>
+                    <form action="stage.php" method="post">
+                        <input type="submit" value="Inserisci">
+                    </form>
+                    <?php
+                }
             ?>
         </form>
     </body>
