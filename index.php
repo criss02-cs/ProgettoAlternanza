@@ -45,8 +45,9 @@
                     <form action="stage.php" method="post">
                         <input type="submit" value="Inserisci">
                     </form>
-                    <?php
+                    <?php            
                 }
+                
             ?>
         </form>
     </body>
