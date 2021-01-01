@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+    <head>
+        <title>Inserimento degli studenti</title>
+    </head>
+    <body>
+        <form action="inserimentoStudenti.php" method="post">
+            <label for="Matricola">Matricola: </label><br>
+            <input type="text" name="Matricola"><br>
+            <label for="Nome">Nome: </label><br>
+            <input type="text" name="Nome"><br>
+            <label for="Cognome">Cognome: </label><br>
+            <input type="text" name="Cognome"><br>
+            <label for="DataNascita">Data di nascita: </label><br>
+            <input type="date" name="DataNascita"><br>
+            <label for="ComuneNascita">Comune di nascita: </label><br>
+            <input type="text" name="ComuneNascita"><br>
+            <label for="ProvinciaNascita">Provincia di nascita: </label><br>
+            <input type="text" name="ProvinciaNascita"><br>
+            <label for="Sesso">Sesso (Solo M o F): </label><br>
+            <input type="text" name="Sesso"><br>
+            <label for="Indirizzo">Indirizzo di casa: </label><br>
+            <input type="text" name="Indirizzo"><br>
+            <label for="Mail">Mail: </label><br>
+            <input type="text" name="Mail"><br>
+            <label for="telefono">Telefono</label><br>
+            <input type="tel" name="Telefono" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"><br><br>
+            <input type="submit" value="Inserisci" class="button">
+        </form>
+    </body>
+</html>

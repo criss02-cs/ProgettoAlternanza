@@ -1,0 +1,22 @@
+<!DOCTYPE html> 
+    <head>
+        <title>Inserimento delle aziende</title>
+    </head>
+    <body>
+        <form action="inserimentoAziende.php" method="post">
+            <label for="PartitaIva">Partita IVA: </label><br>
+            <input type="text" name="PartitaIva"><br>
+            <label for="RagioneSociale">Ragione Sociale: </label><br>
+            <input type="text" name="RagioneSociale"><br>
+            <label for="RappresentanteLegale">Rappresentante Legale: </label><br>
+            <input type="text" name="RappresentanteLegale"><br>
+            <label for="IndirizzoAzienda">Indirizzo dell'azienda: </label><br>
+            <input type="text" name="IndirizzoAzienda"><br>
+            <label for="TelefonoAzienda">Telefono</label><br>
+            <input type="tel" name="TelefonoAzienda" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"><br>
+            <label for="MailAzienda">Mail: </label><br>
+            <input type="text" name="MailAzienda"><br><br>
+            <input type="submit" value="Inserisci" class="button">
+        </form>
+    </body>
+</html>
