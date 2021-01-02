@@ -17,7 +17,7 @@ $i = 0;
     <?php
     while ($row = mysqli_fetch_assoc($result)) { ?>
         <tr>
-            <td name="Nome"><?= $row['Nome'] ?></td>
+            <td><?= $row['Nome'] ?></td>
             <td><?= $row['Cognome'] ?></td>
             <td>
                 <select name="azienda[]">
@@ -33,7 +33,7 @@ $i = 0;
                         $i++;
                     ?>
                 </select>
-                <input type="hidden" name="matricola">
+                <input type="hidden" name="matricola[]" value="<?=$row['Matricola']?>">
             </td>
         </tr>
     <?php }

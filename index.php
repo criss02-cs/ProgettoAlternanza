@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
     <?php
+    session_start();
         //File per la connessione al database
         include_once "mysql_configuration/connection.php";
         
@@ -55,6 +56,24 @@
                 }
                 if($i==count($_GET['azienda'])){ ?>
                     <form action="stage.php" method="post">
+                        <select name="matricole[]" hidden multiple="multiple">
+                            <?php
+                                foreach($_GET['matricola'] as $matricole){ ?>
+                                    <option value="<?=$matricole?>" selected><?=$matricole?></option>
+                                    <?php
+                                }
+                            ?>
+                        </select>
+                        <select name="aziende[]" hidden multiple="multiple">
+                            <?php
+                                foreach($_GET['azienda'] as $aziende){ ?>
+                                    <option value="<?=$aziende?>" selected><?=$aziende?></option>
+                                    <?php
+                                }
+                            ?>
+                        </select>
+                        <input type="hidden" name="inizio" value="<?=$_GET['inizio']?>">
+                        <input type="hidden" name="fine" value="<?=$_GET['fine']?>">
                         <input type="submit" value="Inserisci">
                     </form> <?php
                 }
