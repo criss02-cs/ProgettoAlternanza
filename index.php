@@ -6,7 +6,7 @@
         
         $conn = $GLOBALS['mysqli'];
         //Query per ottenere le classi dell'anno scolastico corrente
-        $sql = "SELECT * FROM classi WHERE AnnoScolastico LIKE '". date("Y") ."%' 
+        $sql = "SELECT * FROM classi WHERE AnnoScolastico LIKE '%". date("Y") ."%' 
                 OR AnnoScolastico LIKE '%". date("Y", strtotime("+1 years")) ."%'";
         //Esecuzione della query
         $result = $conn->query($sql);
@@ -42,13 +42,23 @@
                 //Controllo per aggiungere la lista degli studenti e la scelta delle relative aziende
                 if(!empty($_GET) && !empty($_GET['inizio']) && !empty($_GET['fine'])){
                     include("lista.php"); ?>
-                    <form action="stage.php" method="post">
-                        <input type="submit" value="Inserisci">
-                    </form>
                     <?php            
                 }
-                
             ?>
         </form>
+        <?php
+            if(!empty($_GET['azienda'])){
+                $i=0;
+                foreach($_GET['azienda'] as $aziende){
+                    if($aziende != "empty")
+                        $i++;
+                }
+                if($i==count($_GET['azienda'])){ ?>
+                    <form action="stage.php" method="post">
+                        <input type="submit" value="Inserisci">
+                    </form> <?php
+                }
+            }
+        ?>
     </body>
 </html>

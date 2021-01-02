@@ -24,20 +24,18 @@ $i = 0;
                     <option value="empty" <?php if(empty($_GET['azienda'])) echo 'selected';?>> </option>
                     <?php
                         $risultato = $conn->query($aziende);
-                        $i = 0;
                         while ($riga = mysqli_fetch_assoc($risultato)) { ?>
                             <option value="<?= $riga['PartitaIva'] ?>" <?php if(!empty($_GET['azienda']) && $_GET['azienda'][$i] == $riga['PartitaIva']) echo 'selected';?>>
                                 <?= $riga['RagioneSociale'] ?>
                             </option>
-                        <?php $i++;
+                        <?php
                         }
+                        $i++;
                     ?>
                 </select>
                 <input type="hidden" name="matricola">
             </td>
         </tr>
     <?php }
-        foreach($_GET['azienda'] as $azienda)
-            echo $azienda." ";
     ?>
 </table>
