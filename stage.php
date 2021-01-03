@@ -8,15 +8,14 @@
     $conn = $GLOBALS['mysqli'];
     $sql = "INSERT INTO stage (fk_matricola, fk_partitaIva, Inizio, Fine) VALUES";
     for($i = 0; $i < count($aziende); $i++){
-        $sql.= " ($matricole[$i], '$aziende[$i]', '$inizio', '$fine'),";
+        $sql = "INSERT INTO stage (fk_matricola, fk_partitaIva, Inizio, Fine) VALUES";
+        $sql.= " ($matricole[$i], '$aziende[$i]', '$inizio', '$fine')";
+        if($conn->query($sql) === TRUE){
+            echo "Successo";
+        }
+        else{
+            echo $conn->error;
+        }
     }
-    $sql = substr(trim($sql), 0, -1)."<br>";
-    echo $sql;
-    if($conn->query($sql) === TRUE){
-        echo "Successo";
-    }
-    else{
-        echo $conn->error;
-    }
-    //header("location: index.php");
+    header("location: index.php");
 ?>
