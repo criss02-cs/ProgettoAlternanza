@@ -40,10 +40,10 @@ body{
   } 
   /* Add a black background color to the top navigation */
 .topnav {
-    display: flex;
     background-color: #333;
     overflow: hidden;
     width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   /* Style the links inside the navigation bar */
