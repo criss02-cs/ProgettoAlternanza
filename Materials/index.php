@@ -16,11 +16,13 @@
             <p>Benvenuti nel sito per la gestione dell'alternanza scuola lavoro dell'indirizzo informatico
             del Polo Tecnico Franchetti Salviani</p>
             <button id="myBtn" onclick="myFunction()">Pause</button>
+            <button id="volume" onclick="sound()">Attiva il volume</button>
         </div>
         
         <script>
             var video = document.getElementById("myVideo");
             var btn = document.getElementById("myBtn");
+            var btn2 = document.getElementById("volume");
 
             function myFunction(){
                 if(video.paused){
@@ -30,6 +32,17 @@
                 else{
                     video.pause();
                     btn.innerHTML = "Play";
+                }
+            }
+            function sound(){
+                if(!video.muted){
+                    video.muted = true;
+                    btn2.innerHTML = "Attiva il volume";
+                }
+                else{
+                    video.muted = false;
+                    
+                    btn2.innerHTML = "Muta";
                 }
             }
         </script>   

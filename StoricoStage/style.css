@@ -1,0 +1,57 @@
+/*Stile per la tabella*/
+#stage{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#stage td, #stage th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#stage tr:nth-child(even){background-color: #f2f2f2;}
+#stage tr:hover{background-color: #ddd;}
+
+#stage th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4caf50;
+    color: white;
+}
+/*Stile per la casella di testo*/
+input[type=text]{
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../Materials/searchicon.png');
+    background-size: 20px;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus {
+    width: 58%;
+  }
+  /*Stile per le select*/
+  select {
+    width: 20%;
+    height: 50px;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0;
+    background-color: #4caf50;
+    border: none;
+    border-bottom: 2px solid #4caf50;
+    color: white;
+    padding: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px;
+  }

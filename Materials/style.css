@@ -38,6 +38,20 @@ body{
     background: #ddd;
     color: black;
   } 
+  #volume {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #volume:hover {
+    background: #ddd;
+    color: black;
+  } 
   /* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
