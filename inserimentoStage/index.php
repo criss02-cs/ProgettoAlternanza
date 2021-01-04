@@ -19,35 +19,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Inserimento stage</title>
         <link rel="stylesheet" href="../Materials/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <?php include("../Materials/menu.php"); ?>
-        <form method="get" action="index.php" onchange="this.submit()">
-            <select name="classi" id="classi">
-                <option value="empty" <?php if(empty($_GET['classi'])) echo 'selected';?>> </option>
-                <?php 
-                    //Ciclo per stampare dentro la select tutte le classi
-                    while($row = mysqli_fetch_assoc($result)){
-                        ?>
-                        <option value="<?php echo $row['Anno'].' '.$row['Sezione'].' '.$row['AnnoScolastico']?>" 
-                            <?php if(!empty($_GET['classi']) && $row['Anno'].' '.$row['Sezione'].' '.$row['AnnoScolastico'] == $classe) echo 'selected';?>>
-                                <?php echo $row['Anno'].' '.$row['Sezione'].' '.$row['AnnoScolastico']?>
-                        </option>
-                    <?php }
+        <div class="container">
+            <form method="get" action="index.php" onchange="this.submit()" id="contact">
+                <select name="classi" id="classi">
+                    <option value="empty" <?php if(empty($_GET['classi'])) echo 'selected';?> disabled>Seleziona la classe</option>
+                    <?php 
+                        //Ciclo per stampare dentro la select tutte le classi
+                        while($row = mysqli_fetch_assoc($result)){
+                            ?>
+                            <option value="<?php echo $row['Anno'].' '.$row['Sezione'].' '.$row['AnnoScolastico']?>" 
+                                <?php if(!empty($_GET['classi']) && $row['Anno'].' '.$row['Sezione'].' '.$row['AnnoScolastico'] == $classe) echo 'selected';?>>
+                                    <?php echo $row['Anno'].' '.$row['Sezione'].' '.$row['AnnoScolastico']?>
+                            </option>
+                        <?php }
+                    ?>
+                </select>
+                <?php
+                    //Controllo per aggiungere la scelta del periodo
+                    if(!empty($_GET) && !empty($_GET['classi']) && $_GET['classi'] != "empty"){
+                        include("periodo.php");
+                    }
+                    //Controllo per aggiungere la lista degli studenti e la scelta delle relative aziende
+                    if(!empty($_GET) && !empty($_GET['inizio']) && !empty($_GET['fine'])){
+                        include("lista.php"); ?>
+                        <?php            
+                    }
                 ?>
-            </select>
-            <?php
-                //Controllo per aggiungere la scelta del periodo
-                if(!empty($_GET) && !empty($_GET['classi']) && $_GET['classi'] != "empty"){
-                    include("periodo.php");
-                }
-                //Controllo per aggiungere la lista degli studenti e la scelta delle relative aziende
-                if(!empty($_GET) && !empty($_GET['inizio']) && !empty($_GET['fine'])){
-                    include("lista.php"); ?>
-                    <?php            
-                }
-            ?>
-        </form>
+            </form>
+        </div>
         <?php
             if(!empty($_GET['azienda'])){
                 $i=0;

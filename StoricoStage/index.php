@@ -70,5 +70,6 @@
                 }
             ?>
         </table>
+        <?php include("../Materials/footer.php");?>
     </body>
 </html>

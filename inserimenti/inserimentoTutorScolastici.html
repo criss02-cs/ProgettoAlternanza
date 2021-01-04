@@ -2,6 +2,7 @@
     <head>
         <title>Inserimento dei tutor scolastici</title>
         <link rel="stylesheet" href="../Materials/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="topnav">
@@ -11,13 +12,20 @@
             <a href="inserimentoStudenti.html">Inserisci Studenti</a>
             <a href="inserimentoAziende.html">Inserisci Aziende</a>
             <a href="inserimentoTutorScolastici.html" class="active">Inserisci Tutor Scolastici</a>
-        </div> 
-        <form action="inserimentoTutorScolastici.php" method="post">
-            <label for="Nome">Nome: </label><br>
-            <input type="text" name="Nome"><br>
-            <label for="Cognome">Cognome: </label><br>
-            <input type="text" name="Cognome"><br><br>
-            <input type="submit" value="Inserisci">
-        </form>
+        </div>
+        <div class="container">
+            <form id="contact" action="inserimentoTutorScolastici.php" method="post">
+                <h3>Inserimento studente</h3>
+                <fieldset>
+                    <input type="text" name="Nome" placeholder="Nome" tabindex="1" required autofocus>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Cognome" name="Cognome" type="text" tabindex="2" required>
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Inserisci</button>
+                </fieldset>
+            </form>
+        </div>
     </body>
 </html>

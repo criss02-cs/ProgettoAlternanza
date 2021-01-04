@@ -2,6 +2,7 @@
     <head>
         <title>Inserimento delle aziende</title>
         <link rel="stylesheet" href="../Materials/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="topnav">
@@ -11,21 +12,32 @@
             <a href="inserimentoStudenti.html">Inserisci Studenti</a>
             <a href="inserimentoAziende.html" class="active">Inserisci Aziende</a>
             <a href="inserimentoTutorScolastici.html">Inserisci Tutor Scolastici</a>
-        </div> 
-        <form action="inserimentoAziende.php" method="post">
-            <label for="PartitaIva">Partita IVA: </label><br>
-            <input type="text" name="PartitaIva"><br>
-            <label for="RagioneSociale">Ragione Sociale: </label><br>
-            <input type="text" name="RagioneSociale"><br>
-            <label for="RappresentanteLegale">Rappresentante Legale: </label><br>
-            <input type="text" name="RappresentanteLegale"><br>
-            <label for="IndirizzoAzienda">Indirizzo dell'azienda: </label><br>
-            <input type="text" name="IndirizzoAzienda"><br>
-            <label for="TelefonoAzienda">Telefono</label><br>
-            <input type="tel" name="TelefonoAzienda" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"><br>
-            <label for="MailAzienda">Mail: </label><br>
-            <input type="text" name="MailAzienda"><br><br>
-            <input type="submit" value="Inserisci">
-        </form>
+        </div>
+        <div class="container">
+            <form id="contact" action="inserimentoAziende.php" method="post">
+                <h3>Inserimento studente</h3>
+                <fieldset>
+                    <input type="text" name="PartitaIva" placeholder="Partita Iva" tabindex="1" required autofocus>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Ragione Sociale" name="RagioneSociale" type="text" tabindex="2" required>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Rappresentante Legale" name="RappresentanteLegale" type="text" tabindex="3" required>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Indirizzo" name="Indirizzo" type="text" tabindex="4" required>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Email" name="Mail" type="email" tabindex="5" required>
+                </fieldset>
+                <fieldset>
+                    <input type="tel" placeholder="Numero di Telefono" name="Telefono" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" tabindex="5" required>
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Inserisci</button>
+                </fieldset>
+            </form>
+        </div>
     </body>
 </html>

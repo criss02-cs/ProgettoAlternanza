@@ -2,6 +2,7 @@
     <head>
         <title>Inserimento degli studenti</title>
         <link rel="stylesheet" href="../Materials/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="topnav">
@@ -12,28 +13,47 @@
             <a href="inserimentoAziende.html">Inserisci Aziende</a>
             <a href="inserimentoTutorScolastici.html">Inserisci Tutor Scolastici</a>
         </div> 
-        <form action="inserimentoStudenti.php" method="post">
-            <label for="Matricola">Matricola: </label><br>
-            <input type="text" name="Matricola"><br>
-            <label for="Nome">Nome: </label><br>
-            <input type="text" name="Nome"><br>
-            <label for="Cognome">Cognome: </label><br>
-            <input type="text" name="Cognome"><br>
-            <label for="DataNascita">Data di nascita: </label><br>
-            <input type="date" name="DataNascita"><br>
-            <label for="ComuneNascita">Comune di nascita: </label><br>
-            <input type="text" name="ComuneNascita"><br>
-            <label for="ProvinciaNascita">Provincia di nascita: </label><br>
-            <input type="text" name="ProvinciaNascita"><br>
-            <label for="Sesso">Sesso (Solo M o F): </label><br>
-            <input type="text" name="Sesso"><br>
-            <label for="Indirizzo">Indirizzo di casa: </label><br>
-            <input type="text" name="Indirizzo"><br>
-            <label for="Mail">Mail: </label><br>
-            <input type="text" name="Mail"><br>
-            <label for="telefono">Telefono</label><br>
-            <input type="tel" name="Telefono" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"><br><br>
-            <input type="submit" value="Inserisci">
-        </form>
+        <div class="container">
+            <form id="contact" action="inserimentoStudenti.php" method="post">
+                <h3>Inserimento studente</h3>
+                <fieldset>
+                    <input type="text" name="Matricola" placeholder="Codice Matricola" tabindex="1" required autofocus>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Nome Studente" name="Nome" type="text" tabindex="2" required>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Cognome Studente" name="Cognome" type="text" tabindex="3" required>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Data Nascita" name="DataNascita" type="date" tabindex="4" required>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Comune di nascita" name="ComuneNascita" type="text" tabindex="5" required>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Provincia di nascita" name="ProvinciaNascita" type="text" tabindex="6" required>
+                </fieldset>
+                <fieldset>
+                    <select name="Sesso" tabindex="7">
+                        <option value="empty" selected disabled>Sesso</option>
+                        <option value="M">Maschio</option>
+                        <option value="F">Femmina</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Indirizzo" name="Indirizzo" type="text" tabindex="8" required>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Email" name="Mail" type="email" tabindex="9" required>
+                </fieldset>
+                <fieldset>
+                    <input type="tel" placeholder="Numero di Telefono" name="Telefono" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" tabindex="10" required>
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Inserisci</button>
+                </fieldset>
+            </form>
+        </div>
     </body>
 </html>

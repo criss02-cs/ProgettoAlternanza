@@ -14,6 +14,7 @@ $i = 0;
 <table>
     <th>Nome</th>
     <th>Cognome</th>
+    <th>Azienda</th>
     <?php
     while ($row = mysqli_fetch_assoc($result)) { ?>
         <tr>
