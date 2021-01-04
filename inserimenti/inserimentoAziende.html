@@ -1,10 +1,12 @@
 <!DOCTYPE html> 
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Inserimento delle aziende</title>
         <link rel="stylesheet" href="../Materials/style.css">
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body onload="currentDate()">
         <div class="topnav">
             <a href="../index.php">Home</a>
             <a href="../StoricoStage/index.php">Storico Stage</a>
@@ -39,5 +41,19 @@
                 </fieldset>
             </form>
         </div>
+        <div id="footer">
+            Developed by Aloigi Cristiano & Kuci Rubin
+        </div>
+        <script>
+            function currentDate(){
+                var today = new Date();
+                var dd = String(today.getDate()).padStart(2, '0');
+                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                var yyyy = today.getFullYear();
+
+                today = dd + '-' + mm + '-' + yyyy;
+                document.getElementById("footer").innerHTML += today;  
+            }
+        </script>
     </body>
 </html>
