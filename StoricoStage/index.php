@@ -25,8 +25,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Storico Stage</title>
+        <link rel="stylesheet" href="../Materials/style.css">
     </head>
     <body>
+        <?php include("../Materials/menu.php"); ?>
         <form action="index.php" method="post" onchange="this.submit()">
             <select name="orderBy">
                 <option value="empty" <?php if(empty($_POST['orderBy'])) echo 'selected';?>> </option>

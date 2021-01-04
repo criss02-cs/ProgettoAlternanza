@@ -18,8 +18,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Inserimento stage</title>
+        <link rel="stylesheet" href="../Materials/style.css">
     </head>
     <body>
+        <?php include("../Materials/menu.php"); ?>
         <form method="get" action="index.php" onchange="this.submit()">
             <select name="classi" id="classi">
                 <option value="empty" <?php if(empty($_GET['classi'])) echo 'selected';?>> </option>
