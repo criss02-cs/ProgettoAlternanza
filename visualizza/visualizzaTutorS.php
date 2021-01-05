@@ -19,6 +19,7 @@
     <head>
         <title>Visualizza aziende</title>
         <link rel="stylesheet" href="../Materials/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <?php include("../Materials/menu.php"); ?>
@@ -35,7 +36,7 @@
             </select>
             <input type="text" name="search" value="<?php if(!empty($_POST['search']) && $_POST['search'] != "%") echo $search;?>">
         </form>
-        <table border="1">
+        <table id="stage">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
@@ -71,5 +72,6 @@
                 }
             ?>
         </table>
+        <?php include("../Materials/footer.php");?>
     </body>
 </html>

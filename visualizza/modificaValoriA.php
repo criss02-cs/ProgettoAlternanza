@@ -14,24 +14,36 @@
     <head>
         <title>Modifca dell'azienda</title>
         <link rel="stylesheet" href="../Materials/style.css">
+        <link rel="stylesheet" href="../inserimenti/style.css">
     </head>
     <body>
         <?php include("../Materials/menu.php"); ?>
-        <form action="modificaAzienda.php" method="post">
-            <label for="PartitaIva">Partita IVA: </label><br>
-            <input type="text" name="PartitaIva" value='<?php echo $row["PartitaIva"]; ?>' disabled><br>
-            <input type="hidden" name="pa" value='<?php echo $row["PartitaIva"]; ?>'>
-            <label for="RagioneSociale">Ragione Sociale: </label><br>
-            <input type="text" name="RagioneSociale" value='<?php echo $row["RagioneSociale"]; ?>'><br>
-            <label for="RappresentanteLegale">Rappresentante Legale: </label><br>
-            <input type="text" name="RappresentanteLegale" value='<?php echo $row["RappresentanteLegale"]; ?>'><br>
-            <label for="IndirizzoAzienda">Indirizzo dell'azienda: </label><br>
-            <input type="text" name="IndirizzoAzienda" value='<?php echo $row["IndirizzoAzienda"]; ?>'><br>
-            <label for="TelefonoAzienda">Telefono</label><br>
-            <input type="tel" name="TelefonoAzienda" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" value='<?php echo $row["TelefonoAzienda"]; ?>'><br>
-            <label for="MailAzienda">Mail: </label><br>
-            <input type="text" name="MailAzienda" value='<?php echo $row["MailAzienda"]; ?>'><br><br>
-            <input type="submit" value="Modifica">
-        </form>
+        <div class="container">
+            <form id="contact" action="inserimentoAziende.php" method="post">
+                <h3>Modifica Azienda</h3>
+                <fieldset>
+                    <input type="text" name="PartitaIva" placeholder="Partita Iva" value='<?php echo $row["PartitaIva"]; ?>' tabindex="1">
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Ragione Sociale" value='<?php echo $row["RagioneSociale"]; ?>' name="RagioneSociale" type="text" tabindex="2">
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Rappresentante Legale" value='<?php echo $row["RappresentanteLegale"]; ?>' name="RappresentanteLegale" type="text" tabindex="3">
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Indirizzo" name="Indirizzo" value='<?php echo $row["IndirizzoAzienda"]; ?>' type="text" tabindex="4">
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Email" name="Mail" value='<?php echo $row["MailAzienda"]; ?>' type="email" tabindex="5">
+                </fieldset>
+                <fieldset>
+                    <input type="tel" placeholder="Numero di Telefono" value='<?php echo $row["TelefonoAzienda"]; ?>' name="Telefono" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" tabindex="6">
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Modifica</button>
+                </fieldset>
+            </form>
+        </div>
+        <?php include("../Materials/footer.php");?>
     </body>
 </html>

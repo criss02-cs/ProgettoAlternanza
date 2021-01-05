@@ -14,18 +14,25 @@
     <head>
         <title>Modifca dell'azienda</title>
         <link rel="stylesheet" href="../Materials/style.css">
+        <link rel="stylesheet" href="../inserimenti/style.css">
     </head>
     <body>
         <?php include("../Materials/menu.php"); ?>
-        <form action="modificaTutorS.php" method="post">
-            <label for="id_tutorscolastico">ID: </label><br>
-            <input type="text" name="id_tutorscolastico" value='<?php echo $row["id_tutorscolastico"]; ?>' disabled><br>
-            <input type="hidden" name="id" value='<?php echo $row["id_tutorscolastico"]; ?>'>
-            <label for="Nome">Nome: </label><br>
-            <input type="text" name="Nome" value='<?php echo $row["Nome"]; ?>'><br>
-            <label for="Cognome">Cognome: </label><br>
-            <input type="text" name="Cognome" value='<?php echo $row["Cognome"]; ?>'><br><br>
-            <input type="submit" value="Modifica">
-        </form>
+        <div class="container">
+            <form id="contact" action="modificaTutorS.php" method="post">
+                <h3>Modifica Tutor Scolastico</h3>
+                <input type="hidden" name="id_tutorscolastico" value='<?php echo $row["id_tutorscolastico"]; ?>' disabled>
+                <fieldset>
+                    <input type="text" name="Nome" value="<?php echo $row["Nome"]; ?>" placeholder="Nome" tabindex="1">
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Cognome" value="<?php echo $row["Cognome"]; ?>" name="Cognome" type="text" tabindex="2">
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Modifica</button>
+                </fieldset>
+            </form>
+        </div>
+        <?php include("../Materials/footer.php");?>
     </body>
 </html>
