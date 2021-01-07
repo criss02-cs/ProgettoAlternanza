@@ -1,6 +1,6 @@
 <html>
     <?php
-        include_once "mysql_configuration/connection.php";
+        include_once "../mysql_configuration/connection.php";
         $conn = $GLOBALS['mysqli'];
         $partitaIVA = $_POST['PartitaIva'];
         $ragioneSociale = $_POST['RagioneSociale'];

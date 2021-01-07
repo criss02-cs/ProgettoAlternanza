@@ -1,6 +1,6 @@
 <html>
     <?php
-        include_once "mysql_configuration/connection.php";
+        include_once "../mysql_configuration/connection.php";
         $conn = $GLOBALS['mysqli'];
         $matricola = $_POST['Matricola'];
         $nome = $_POST['Nome'];
@@ -21,6 +21,6 @@
         } else {
             echo $conn->error;
         }
-        header("Location: inserimentoStudenti.html");
+        //header("Location: inserimentoStudenti.html");
     ?>
 </html>

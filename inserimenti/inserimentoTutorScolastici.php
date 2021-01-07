@@ -1,6 +1,6 @@
 <html>
     <?php
-        include_once "mysql_configuration/connection.php";
+        include_once "../mysql_configuration/connection.php";
         $conn = $GLOBALS['mysqli'];
         $nome = $_POST['Nome'];
         $cognome = $_POST['Cognome'];

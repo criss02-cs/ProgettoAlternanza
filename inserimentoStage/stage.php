@@ -4,7 +4,7 @@
     $inizio = date("Y-m-d", strtotime($_POST['inizio']));
     $fine = date("Y-m-d", strtotime($_POST['fine']));
     //File per la connessione al database
-    include_once "mysql_configuration/connection.php";
+    include_once "../mysql_configuration/connection.php";
     $conn = $GLOBALS['mysqli'];
     $sql = "INSERT INTO stage (fk_matricola, fk_partitaIva, Inizio, Fine) VALUES";
     for($i = 0; $i < count($aziende); $i++){

@@ -24,7 +24,7 @@
         $result = $conn->query($sql);
     ?>
     <head>
-        <title>Visualizza aziende</title>
+        <title>Visualizza studenti</title>
         <link rel="stylesheet" href="../Materials/style.css">
         <link rel="stylesheet" href="style.css">
     </head>
