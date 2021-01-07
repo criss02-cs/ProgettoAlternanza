@@ -15,13 +15,14 @@
         <title>Modifca dell'azienda</title>
         <link rel="stylesheet" href="../Materials/style.css">
         <link rel="stylesheet" href="../inserimenti/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <?php include("../Materials/menu.php"); ?>
         <div class="container">
             <form id="contact" action="modificaTutorS.php" method="post">
                 <h3>Modifica Tutor Scolastico</h3>
-                <input type="hidden" name="id_tutorscolastico" value='<?php echo $row["id_tutorscolastico"]; ?>' disabled>
+                <input type="hidden" name="id_tutorscolastico" value='<?php echo $row["id_tutorscolastico"]; ?>'>
                 <fieldset>
                     <input type="text" name="Nome" value="<?php echo $row["Nome"]; ?>" placeholder="Nome" tabindex="1">
                 </fieldset>

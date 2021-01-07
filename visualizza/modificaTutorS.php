@@ -2,7 +2,7 @@
     <?php
         include_once "../mysql_configuration/connection.php";
         $conn = $GLOBALS['mysqli'];
-        $id_tutorscolastico = $_POST['id'];
+        $id_tutorscolastico = $_POST['id_tutorscolastico'];
         $nome = $_POST['Nome'];
         $cognome = $_POST['Cognome'];
         $sql = "

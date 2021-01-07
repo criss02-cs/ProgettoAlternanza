@@ -2,7 +2,7 @@
     <?php
         include_once "../mysql_configuration/connection.php";
         $conn = $GLOBALS['mysqli'];
-        $matricola = $_POST['ma'];
+        $matricola = $_POST['Matricola'];
         $nome = $_POST['Nome'];
         $cognome = $_POST['Cognome'];
         $dataNascita = $_POST['DataNascita'];

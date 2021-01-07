@@ -15,11 +15,12 @@
         <title>Modifca dell'azienda</title>
         <link rel="stylesheet" href="../Materials/style.css">
         <link rel="stylesheet" href="../inserimenti/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <?php include("../Materials/menu.php"); ?>
         <div class="container">
-            <form id="contact" action="inserimentoStudenti.php" method="post">
+            <form id="contact" action="modificaStudente.php" method="post">
                 <h3>Modifica studente</h3>
                 <fieldset>
                     <input type="text" name="Matricola" value="<?php echo $row["Matricola"]; ?>" placeholder="Codice Matricola" tabindex="1">

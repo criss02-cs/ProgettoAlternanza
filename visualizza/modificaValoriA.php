@@ -15,11 +15,12 @@
         <title>Modifca dell'azienda</title>
         <link rel="stylesheet" href="../Materials/style.css">
         <link rel="stylesheet" href="../inserimenti/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <?php include("../Materials/menu.php"); ?>
         <div class="container">
-            <form id="contact" action="inserimentoAziende.php" method="post">
+            <form id="contact" action="modificaAzienda.php" method="post">
                 <h3>Modifica Azienda</h3>
                 <fieldset>
                     <input type="text" name="PartitaIva" placeholder="Partita Iva" value='<?php echo $row["PartitaIva"]; ?>' tabindex="1">
