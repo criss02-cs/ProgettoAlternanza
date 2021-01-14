@@ -1,11 +1,31 @@
-<div class="topnav">
-  <a <?php if(strpos($_SERVER['PHP_SELF'], 'Materials') !== false) echo 'class="active"'?> href="../index.php">Home</a>
-  <a <?php if(strpos($_SERVER['PHP_SELF'], 'Storico') !== false) echo 'class="active"'?> href="../StoricoStage/index.php">Storico Stage</a>
-  <a <?php if(strpos($_SERVER['PHP_SELF'], 'inserimentoStage') !== false) echo 'class="active"'?> href="../inserimentoStage/index.php">Organizza Stage</a>
-  <a <?php if(strpos($_SERVER['PHP_SELF'], 'inserimentoStudenti') !== false) echo 'class="active"'?> href="../inserimenti/inserimentoStudenti.html">Inserisci Studenti</a>
-  <a <?php if(strpos($_SERVER['PHP_SELF'], 'inserimentoAziende') !== false) echo 'class="active"'?> href="../inserimenti/inserimentoAziende.html">Inserisci Aziende</a>
-  <a <?php if(strpos($_SERVER['PHP_SELF'], 'inserimentoTutorScolastici') !== false) echo 'class="active"'?> href="../inserimenti/inserimentoTutorScolastici.html">Inserisci Tutor Scolastici</a>
-  <a <?php if(strpos($_SERVER['PHP_SELF'], 'visualizzaTutorS') !== false) echo 'class="active"'?> href="../visualizza/visualizzaTutorS.php">Visualizza i tutor scolastici</a>
-  <a <?php if(strpos($_SERVER['PHP_SELF'], 'visualizzaStudenti') !== false) echo 'class="active"'?> href="../visualizza/visualizzaStudenti.php">Visualizza gli studenti</a>
-  <a <?php if(strpos($_SERVER['PHP_SELF'], 'visualizzaAziende') !== false) echo 'class="active"'?> href="../visualizza/visualizzaAziende.php">Visualizza le aziende</a>
-</div> 
+<ul>
+  <li><a <?php //if(strpos($_SERVER['PHP_SELF'], 'Materials') !== false) echo 'class="active"'?> href="../index.php">Home</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Stage</a>
+    <div class="dropdown-content">
+      <a href="../StoricoStage/index.php">Storico Stage</a>
+      <a href="../inserimentoStage/index.php">Organizza Stage</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Studenti</a>
+    <div class="dropdown-content">
+      <a href="../inserimenti/inserimentoStudenti.html">Inserisci Studenti</a>
+      <a href="../visualizza/visualizzaStudenti.php">Visualizza Studenti</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Aziende</a>
+    <div class="dropdown-content">
+      <a href="../inserimenti/inserimentoAziende.html">Inserisci Aziende</a>
+      <a href="../visualizza/visualizzaAziende.php">Visualizza Aziende</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Tutor Scolastici</a>
+    <div class="dropdown-content">
+      <a href="../inserimenti/inserimentoTutorScolastici.html">Inserisci Tutor Scolastici</a>
+      <a href="../visualizza/visualizzaTutorS.php">Visualizza Tutor Scolastici</a>
+    </div>
+  </li>
+</ul>

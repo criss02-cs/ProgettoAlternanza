@@ -27,6 +27,7 @@
         <title>Visualizza studenti</title>
         <link rel="stylesheet" href="../Materials/style.css">
         <link rel="stylesheet" href="style.css">
+        <link href="../fontawesome/css/all.min.css" rel="stylesheet">
     </head>
     <body>
         <?php include("../Materials/menu.php"); ?>
@@ -83,13 +84,13 @@
                             <td>
                                 <form action="modificaValoriS.php" method="post">
                                     <input type="hidden" name="ma" value='<?php echo $row["Matricola"]; ?>'>
-                                    <input type="submit" value="Modifica" class="button">
+                                    <button type="submit" class="button"><i class="far fa-edit"></i></button>
                                 </form>
                             </td>
                             <td>
                                 <form action="cancellaStudente.php" method="post">
                                     <input type="hidden" name="ma" value='<?php echo $row["Matricola"]; ?>'>
-                                    <input type="submit" value="Elimina" class="button">
+                                    <button type="submit" class="button"><i class="far fa-trash-alt"></i></button>
                                 </form>
                             </td>
                         </tr>

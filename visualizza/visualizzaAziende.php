@@ -23,6 +23,7 @@
         <title>Visualizza aziende</title>
         <link rel="stylesheet" href="../Materials/style.css">
         <link rel="stylesheet" href="style.css">
+        <link href="../fontawesome/css/all.min.css" rel="stylesheet">
     </head>
     <body>
         <?php include("../Materials/menu.php"); ?>
@@ -67,13 +68,13 @@
                             <td>
                                 <form action="modificaValoriA.php" method="post">
                                     <input type="hidden" name="pa" value='<?php echo $row["PartitaIva"]; ?>'>
-                                    <input type="submit" value="Modifica" class="button">
+                                    <button type="submit" class="button"><i class="far fa-edit"></i></button>
                                 </form>
                             </td>
                             <td>
                                 <form action="cancellaAzienda.php" method="post">
                                     <input type="hidden" name="pa" value='<?php echo $row["PartitaIva"]; ?>'>
-                                    <input type="submit" value="Elimina" class="button">
+                                    <button type="submit" class="button"><i class="far fa-trash-alt"></i></button>
                                 </form>
                             </td>
                         </tr>

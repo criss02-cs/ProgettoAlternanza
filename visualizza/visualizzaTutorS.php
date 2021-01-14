@@ -20,6 +20,7 @@
         <title>Visualizza aziende</title>
         <link rel="stylesheet" href="../Materials/style.css">
         <link rel="stylesheet" href="style.css">
+        <link href="../fontawesome/css/all.min.css" rel="stylesheet">
     </head>
     <body>
         <?php include("../Materials/menu.php"); ?>
@@ -55,13 +56,13 @@
                             <td>
                                 <form action="modificaValoriTS.php" method="post">
                                     <input type="hidden" name="id" value='<?php echo $row["id_tutorscolastico"]; ?>'>
-                                    <input type="submit" value="Modifica" class="button">
+                                    <button type="submit" class="button"><i class="far fa-edit"></i></button>
                                 </form>
                             </td>
                             <td>
                                 <form action="cancellaTutorS.php" method="post">
                                     <input type="hidden" name="id" value='<?php echo $row["id_tutorscolastico"]; ?>'>
-                                    <input type="submit" value="Elimina" class="button">
+                                    <button type="submit" class="button"><i class="far fa-trash-alt"></i></button>
                                 </form>
                             </td>
                         </tr>
