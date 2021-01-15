@@ -77,6 +77,11 @@
                                     <button type="submit" class="button"><i class="far fa-trash-alt"></i></button>
                                 </form>
                             </td>
+                            <td>
+                                <form action="../StampePdf/aziende.php" method="post">
+                                    <button type="submit" class="button"><i class="fas fa-file-pdf"></i></button>
+                                </form>
+                            </td>
                         </tr>
                         <?php
                     }
