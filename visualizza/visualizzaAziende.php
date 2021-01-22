@@ -79,6 +79,7 @@
                             </td>
                             <td>
                                 <form action="../StampePdf/aziende.php" method="post">
+                                    <input type="hidden" name="pa" value='<?php echo $row["PartitaIva"]; ?>'>
                                     <button type="submit" class="button"><i class="fas fa-file-pdf"></i></button>
                                 </form>
                             </td>

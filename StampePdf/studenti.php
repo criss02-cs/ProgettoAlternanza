@@ -2,7 +2,8 @@
         require("../pdf/fpdf.php");
         include_once "../mysql_configuration/connection.php";
         $conn = $GLOBALS['mysqli'];
-        $sql = "select * from studenti";
+        $ma = $_POST['ma'];
+        $sql = "select * from studenti where Matricola=$ma";
         echo $sql;
         $result = mysqli_query($conn, $sql);
         $pdf = new FPDF('P','mm','A4');

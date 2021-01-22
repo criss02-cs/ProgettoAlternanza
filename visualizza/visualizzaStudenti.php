@@ -95,6 +95,7 @@
                             </td>
                             <td>
                                 <form action="../StampePdf/studenti.php" method="post">
+                                    <input type="hidden" name="ma" value='<?php echo $row["Matricola"]; ?>'>
                                     <button type="submit" class="button"><i class="fas fa-file-pdf"></i></button>
                                 </form>
                             </td>

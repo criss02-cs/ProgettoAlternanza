@@ -67,6 +67,7 @@
                             </td>
                             <td>
                                 <form action="../StampePdf/tutorS.php" method="post">
+                                    <input type="hidden" name="id" value='<?php echo $row["id_tutorscolastico"]; ?>'>
                                     <button type="submit" class="button"><i class="fas fa-file-pdf"></i></button>
                                 </form>
                             </td>

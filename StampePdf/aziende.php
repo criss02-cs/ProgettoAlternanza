@@ -2,7 +2,8 @@
         require("../pdf/fpdf.php");
         include_once "../mysql_configuration/connection.php";
         $conn = $GLOBALS['mysqli'];
-        $sql = "select * from aziende";
+        $pa = $_POST['pa'];
+        $sql = "select * from aziende where PartitaIva = $pa";
         echo $sql;
         $result = mysqli_query($conn, $sql);
         $pdf = new FPDF('L','mm','A4');
