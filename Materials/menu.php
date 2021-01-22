@@ -19,6 +19,7 @@
     <div class="dropdown-content">
       <a href="../inserimenti/inserimentoAziende.php">Inserisci Aziende</a>
       <a href="../visualizza/visualizzaAziende.php">Visualizza Aziende</a>
+      <a href="../visualizza/visualizzaAziendeDisponibili.php">Aziende Disponibili</a>
     </div>
   </li>
   <li class="dropdown">
