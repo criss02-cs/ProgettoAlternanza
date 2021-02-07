@@ -67,7 +67,7 @@ body {
   #contact input[type="text"]:hover,
   #contact input[type="email"]:hover,
   #contact input[type="date"]:hover,
-  #contact input[type="number"],
+  #contact input[type="number"]:hover,
   #contact select,
   #contact input[type="tel"] {
     -webkit-transition: border-color 0.3s ease-in-out;
