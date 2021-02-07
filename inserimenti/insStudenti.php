@@ -21,6 +21,6 @@
         } else {
             echo $conn->error;
         }
-        //header("Location: inserimentoStudenti.html");
+        header("Location:../visualizza/visualizzaStudenti.php");
     ?>
 </html>

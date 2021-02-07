@@ -7,7 +7,7 @@
     <body>
         <?php include("../Materials/menu.php"); ?>
         <div class="container">
-            <form id="contact" action="inserimentoStudenti.php" method="post">
+            <form id="contact" action="insStudenti.php" method="post">
                 <h3>Inserimento studente</h3>
                 <fieldset>
                     <input type="text" name="Matricola" placeholder="Codice Matricola" tabindex="1" required autofocus>

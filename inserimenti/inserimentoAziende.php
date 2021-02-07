@@ -9,7 +9,7 @@
     <body>
         <?php include("../Materials/menu.php"); ?>
         <div class="container">
-            <form id="contact" action="inserimentoAziende.php" method="post">
+            <form id="contact" action="insAziende.php" method="post">
                 <h3>Inserimento azienda</h3>
                 <fieldset>
                     <input type="text" name="PartitaIva" placeholder="Partita Iva" tabindex="1" required autofocus>

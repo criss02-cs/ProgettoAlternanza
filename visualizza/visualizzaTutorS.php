@@ -3,7 +3,7 @@
     <?php
         include_once "../mysql_configuration/connection.php";
         $conn = $GLOBALS['mysqli'];
-        $orderBy = $_POST['orderBy'] = !empty($_POST['orderBy']) && $_POST['order'] != "empty" ? $_POST['orderBy'] : "id_tutorscolastico";
+        $orderBy = $_POST['orderBy'] = !empty($_POST['orderBy']) && $_POST['order'] != "empty" ? $_POST['orderBy'] : "Cognome";
         $order = $_POST['order'] = !empty($_POST['order']) && $_POST['order'] != "empty" ? $_POST['order'] : "ASC";
         $search = $_POST['search'] = !empty($_POST['search']) ? $_POST['search'] : "%";
         $sql = "
@@ -26,7 +26,6 @@
         <?php include("../Materials/menu.php"); ?>
         <form action="visualizzaTutorS.php" method="post" onchange="this.submit()">
             <select name="orderBy">
-                <option value="id_tutorscolastico" <?php if(!empty($_POST['orderBy']) && $orderBy == "id_tutorscolastico") echo 'selected';?>>ID</option>
                 <option value="Nome" <?php if(!empty($_POST['orderBy']) && $orderBy == "Nome") echo 'selected';?>>Nome</option>
                 <option value="Cognome" <?php if(!empty($_POST['orderBy']) && $orderBy == "Cognome") echo 'selected';?>>Cognome</option>
             </select>
@@ -39,20 +38,19 @@
         </form>
         <table id="stage">
             <tr>
-                <th>ID</th>
-                <th>Nome</th>
                 <th>Cognome</th>
+				<th>Nome</th>
                 <th>Modifica</th>
                 <th>Elimina</th>
+				<th>PDF</th>
             </tr>
             <?php
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         ?>
                         <tr>
-                            <td><?php echo $row["id_tutorscolastico"]; ?></td>
-                            <td><?php echo $row["Nome"]; ?></td>
                             <td><?php echo $row["Cognome"]; ?></td>
+							<td><?php echo $row["Nome"]; ?></td>
                             <td>
                                 <form action="modificaValoriTS.php" method="post">
                                     <input type="hidden" name="id" value='<?php echo $row["id_tutorscolastico"]; ?>'>
@@ -67,7 +65,6 @@
                             </td>
                             <td>
                                 <form action="../StampePdf/tutorS.php" method="post">
-                                    <input type="hidden" name="id" value='<?php echo $row["id_tutorscolastico"]; ?>'>
                                     <button type="submit" class="button"><i class="fas fa-file-pdf"></i></button>
                                 </form>
                             </td>

@@ -7,7 +7,7 @@
     <body>
       <?php include("../Materials/menu.php"); ?>
         <div class="container">
-            <form id="contact" action="inserimentoTutorScolastici.php" method="post">
+            <form id="contact" action="insTutorScolastici.php" method="post">
                 <h3>Inserimento tutor scolastico</h3>
                 <fieldset>
                     <input type="text" name="Nome" placeholder="Nome" tabindex="1" required autofocus>

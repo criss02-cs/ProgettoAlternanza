@@ -7,7 +7,12 @@ $sql = "SELECT Matricola, Nome, Cognome from ((studenti inner join frequenta on 
     WHERE fk_annoscolastico = '$annoScolastico' and fk_anno = '$anno' and fk_sezione = '$sezione'";
 //Esecuzione della query
 $result = $conn->query($sql);
-$aziende = "SELECT PartitaIva, RagioneSociale FROM aziende";
+//mostra solo Aziende che hanno dato la disponiblità per l'anno corrente
+$aziende = "SELECT *
+			FROM aziende
+			RIGHT JOIN disponibilita
+			ON aziende.PartitaIva = Disponibilita.fk_partitaIVA
+			where annoScolastico=YEAR(CURDATE())";
 $i = 0;
 
 ?>

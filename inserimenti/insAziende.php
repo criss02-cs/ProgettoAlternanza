@@ -17,6 +17,6 @@
         } else {
             echo $conn->error;
         }
-        header("Location: inserimentoAziende.html");
+        header("Location: ../visualizza/visualizzaAziende.php");
     ?>
 </html>

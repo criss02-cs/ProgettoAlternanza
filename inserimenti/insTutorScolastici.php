@@ -13,6 +13,6 @@
         } else {
             echo $conn->error;
         }
-        header("Location: inserimentoTutorScolastici.html");
+        header("Location:../visualizza/visualizzaTutorS.php");
     ?>
 </html>

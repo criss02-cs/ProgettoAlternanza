@@ -53,6 +53,7 @@
                 <th>Mail</th>
                 <th>Modifica</th>
                 <th>Elimina</th>
+				<th>PDF</th>
             </tr>
             <?php
                 if (mysqli_num_rows($result) > 0) {
@@ -91,6 +92,8 @@
                 }
             ?>
         </table>
+		<br>
+		<br>
         <?php include("../Materials/footer.php");?>
     </body>
 </html>

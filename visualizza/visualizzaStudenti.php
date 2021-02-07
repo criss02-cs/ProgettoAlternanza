@@ -3,7 +3,7 @@
     <?php
         include_once "../mysql_configuration/connection.php";
         $conn = $GLOBALS['mysqli'];
-        $orderBy = $_POST['orderBy'] = !empty($_POST['orderBy']) && $_POST['order'] != "empty" ? $_POST['orderBy'] : "Matricola";
+        $orderBy = $_POST['orderBy'] = !empty($_POST['orderBy']) && $_POST['order'] != "empty" ? $_POST['orderBy'] : "Cognome";
         $order = $_POST['order'] = !empty($_POST['order']) && $_POST['order'] != "empty" ? $_POST['order'] : "ASC";
         $search = $_POST['search'] = !empty($_POST['search']) ? $_POST['search'] : "%";
         $sql = "
@@ -33,10 +33,10 @@
         <?php include("../Materials/menu.php"); ?>
         <form action="visualizzaStudenti.php" method="post" onchange="this.submit()">
             <select name="orderBy">
-                <option value="Matricola" <?php if(!empty($_POST['orderBy']) && $orderBy == "Matricola") echo 'selected';?>>Matricola</option>
-                <option value="Nome" <?php if(!empty($_POST['orderBy']) && $orderBy == "Nome") echo 'selected';?>>Nome</option>
                 <option value="Cognome" <?php if(!empty($_POST['orderBy']) && $orderBy == "Cognome") echo 'selected';?>>Cognome</option>
-                <option value="DataNascita" <?php if(!empty($_POST['orderBy']) && $orderBy == "DataNascita") echo 'selected';?>>Data di nascita</option>
+                <option value="Nome" <?php if(!empty($_POST['orderBy']) && $orderBy == "Nome") echo 'selected';?>>Nome</option>
+                <option value="Matricola" <?php if(!empty($_POST['orderBy']) && $orderBy == "Matricola") echo 'selected';?>>Matricola</option>
+				<option value="DataNascita" <?php if(!empty($_POST['orderBy']) && $orderBy == "DataNascita") echo 'selected';?>>Data di nascita</option>
                 <option value="ComuneNascita" <?php if(!empty($_POST['orderBy']) && $orderBy == "ComuneNascita") echo 'selected';?>>Comune di nascita</option>
                 <option value="ProvinciaNascita" <?php if(!empty($_POST['orderBy']) && $orderBy == "ProvinciaNascita") echo 'selected';?>>Provincia di nascita</option>
                 <option value="Sesso" <?php if(!empty($_POST['orderBy']) && $orderBy == "Sesso") echo 'selected';?>>Sesso</option>
@@ -54,17 +54,17 @@
         <table id="stage">
             <tr>
                 <th>Matricola</th>
-                <th>Nome</th>
                 <th>Cognome</th>
-                <th>Data di nascita</th>
+				<th>Nome</th>
+				<th>Data di nascita</th>
                 <th>Comune di nascita</th>
                 <th>Provincia di nascita</th>
-                <th>Sesso</th>
                 <th>Indirizzo</th>
                 <th>Mail</th>
                 <th>Telefono</th>
                 <th>Modifica</th>
                 <th>Elimina</th>
+				<th>PDF</th>
             </tr>
             <?php
                 if (mysqli_num_rows($result) > 0) {
@@ -72,12 +72,11 @@
                         ?>
                         <tr>
                             <td><?php echo $row["Matricola"]; ?></td>
-                            <td><?php echo $row["Nome"]; ?></td>
                             <td><?php echo $row["Cognome"]; ?></td>
+							<td><?php echo $row["Nome"]; ?></td>
                             <td><?php echo $row["DataNascita"]; ?></td>
                             <td><?php echo $row["ComuneNascita"]; ?></td>
                             <td><?php echo $row["ProvinciaNascita"]; ?></td>
-                            <td><?php echo $row["Sesso"]; ?></td>
                             <td><?php echo $row["Indirizzo"]; ?></td>
                             <td><?php echo $row["Mail"]; ?></td>
                             <td><?php echo $row["Telefono"]; ?></td>
@@ -95,7 +94,6 @@
                             </td>
                             <td>
                                 <form action="../StampePdf/studenti.php" method="post">
-                                    <input type="hidden" name="ma" value='<?php echo $row["Matricola"]; ?>'>
                                     <button type="submit" class="button"><i class="fas fa-file-pdf"></i></button>
                                 </form>
                             </td>
