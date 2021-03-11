@@ -5,7 +5,13 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <?php include("../Materials/menu.php"); ?>
+        <?php 
+            include("../Materials/menu.php"); 
+            session_start();
+            if(!isset($_SESSION['nomeUtente'])){
+                header("Location: ../Login/index.php");
+            }
+        ?>
         <div class="container">
             <form id="contact" action="insStudenti.php" method="post">
                 <h3>Inserimento studente</h3>

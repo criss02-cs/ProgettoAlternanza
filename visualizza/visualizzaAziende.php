@@ -26,7 +26,13 @@
         <link href="../fontawesome/css/all.min.css" rel="stylesheet">
     </head>
     <body>
-        <?php include("../Materials/menu.php"); ?>
+        <?php 
+            include("../Materials/menu.php"); 
+            session_start();
+            if(!isset($_SESSION['nomeUtente'])){
+                header("Location: ../Login/index.php");
+            }
+        ?>
         <form action="visualizzaAziende.php" method="post" onchange="this.submit()">
             <select name="orderBy">
                 <option value="PartitaIva" <?php if(!empty($_POST['orderBy']) && $orderBy == "PartitaIva") echo 'selected';?>>Partita IVA</option>
