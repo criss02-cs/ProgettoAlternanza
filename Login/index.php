@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Inserimento delle aziende</title>
+        <title>Login</title>
         <link rel="stylesheet" href="../Materials/style.css">
         <link rel="stylesheet" href="style.css">
     </head>
@@ -17,14 +17,6 @@
                 <?php
                     $_SESSION = array();
                     session_destroy();
-                } 
-                else{ ?>
-                    <script language="Javascript">
-                        alert("Login avvenuto con successo!");
-                    </script>
-                    <?php
-                    $_SESSION = array();
-                    session_destroy();
                 }
             }            
         ?>
@@ -34,7 +26,6 @@
                 <h3>Login</h3>
                 <fieldset>
                     <input type="text" name="nomeUtente" placeholder="Nome utente" tabindex="1" required autofocus>
-                    <input type="hidden" name="paginaPrimaria" value= <?php echo $_SERVER['HTTP_REFERER'] ?>>
                 </fieldset>
                 <fieldset>
                     <input placeholder="Password" name="password" type="password" tabindex="2" required>

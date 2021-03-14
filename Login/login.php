@@ -15,8 +15,7 @@
     session_start();
     if($conta == 1){
         $_SESSION['nomeUtente'] = $nomeUtente;
-        $pagina = $_POST['paginaPrimaria'];
-        header("Location: ".$pagina);
+        header("Location: ../index.php");
     } 
     else{
         $_SESSION['nomeUtente'] = "Credenziali errate riprova";

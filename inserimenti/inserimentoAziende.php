@@ -9,10 +9,6 @@
     <body>
         <?php 
             include("../Materials/menu.php"); 
-            session_start();
-            if(!isset($_SESSION['nomeUtente'])){
-                header("Location: ../Login/index.php");
-            }
         ?>
         <div class="container">
             <form id="contact" action="insAziende.php" method="post">

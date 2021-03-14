@@ -24,11 +24,7 @@
     </head>
     <body>
         <?php 
-            include("../Materials/menu.php"); 
-            session_start();
-            if(!isset($_SESSION['nomeUtente'])){
-                header("Location: ../Login/index.php");
-            }
+            include("../Materials/menu.php");
         ?>
         <form action="visualizzaTutorS.php" method="post" onchange="this.submit()">
             <select name="orderBy">
