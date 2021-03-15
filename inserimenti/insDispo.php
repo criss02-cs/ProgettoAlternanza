@@ -13,6 +13,9 @@
 <body>
     <?php 
         include("../Materials/menu.php");
+        if(!isset($_SESSION['nomeUtente'])){
+            header("Location: ../Login/index.php");
+        }
     ?>
     <div class="container">
         <form action="#" id="contact" method="post">

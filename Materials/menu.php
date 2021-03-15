@@ -13,7 +13,7 @@
         <a href="javascript:void(0)" class="dropbtn">Stage</a>
         <div class="dropdown-content">
           <a href="../inserimentoStage/index.php">Organizza Stage</a>
-        <a href="../StoricoStage/index.php">Storico Stage</a>
+          <a href="../StoricoStage/index.php">Storico Stage</a>
         </div>
       </li>
       <li class="dropdown">
@@ -57,7 +57,11 @@
     }
     else { ?>
       <li class="dropdown" style="float: right;">
-          <a href="../Login/logout.php" class="dropbtn">Logout</a>
+          <a href="javascript:void(0)" class="dropbtn"><?=$_SESSION['nomeUtente']?></a>
+          <div class="dropdown-content">
+            <a href="#">Profilo</a>
+            <a href="../Login/logout.php">Logout</a>
+          </div>
       </li>
       <?php
     }

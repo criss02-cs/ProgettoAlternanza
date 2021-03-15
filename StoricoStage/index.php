@@ -29,7 +29,12 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <?php include("../Materials/menu.php"); ?>
+        <?php 
+            include("../Materials/menu.php"); 
+            if(!isset($_SESSION['nomeUtente'])){
+                header("Location: ../Login/index.php");
+            }
+        ?>
         <form action="index.php" method="post" onchange="this.submit()">
             <select name="orderBy">
                 <option value="empty" <?php if(empty($_POST['orderBy'])) echo 'selected';?>> </option>
