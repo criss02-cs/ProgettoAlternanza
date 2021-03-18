@@ -123,10 +123,12 @@ table button[type="submit"]:active {
   background-color: #4caf50;
   color: white;
   clear: both;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .credits-text {
   font-size: 1.75em;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .credits-image {
