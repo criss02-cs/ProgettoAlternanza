@@ -106,4 +106,42 @@ table button[type="submit"]:active {
   vertical-align: middle;
 }
 
+.container {
+  position: relative;
+  left: 20em;
+  text-align: center;
+  width: 55em;
+  
+}
 
+.credits-title {
+  font-size: 2em;
+  border-right: 3px solid black;
+  width: 290px;
+  position: relative;
+  left: 9em;
+  background-color: #4caf50;
+  color: white;
+  clear: both;
+}
+
+.credits-text {
+  font-size: 1.75em;
+}
+
+.credits-image {
+  height: 437px;
+  width: 377px;
+}
+
+.credits-image1 .credits-image2 {
+  position: relative;
+}
+
+.credits-image1 {
+  float: left;
+}
+
+.credits-image2 {
+  float: right;
+}
